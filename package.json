@@ -1,0 +1,21 @@
+{
+    "name": "login_signup",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server_2.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server_2.js",
+        "dev": "nodemon server_2.js"
+    },
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "^1.20.0",
+        "express": "^4.18.1",
+        "joi": "^17.6.0",
+        "mongoose": "^6.4.1",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.18"
+    }
+}
