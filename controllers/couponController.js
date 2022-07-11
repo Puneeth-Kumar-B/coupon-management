@@ -3,7 +3,7 @@ const coupon = require('../models/coupon')
 
 const createCoupon = async(req, res) => {
     try {
-        let { offerName, couponCode, startDate, endDate, discount, amount } = req.body;
+        let { offerName, couponCode, startDate, endDate, discount, amount, status } = req.body;
 
         if (!offerName) {
             return res.status(400).json({ error: "Please Enter Offer Name" });
@@ -22,6 +22,9 @@ const createCoupon = async(req, res) => {
         }
         if (!amount) {
             return res.status(400).json({ error: "Please Enter Discount Amount" });
+        }
+        if (!status) {
+            return res.status(400).json({ error: "Please Enter Coupon Status" });
         }
 
         const couponExist = await coupon.findOne({ $or: [{ offerName: offerName }, { couponCode: couponCode }] });
